@@ -33,7 +33,8 @@ def score_model(dataset):
 csv_file_buffer_single = st.file_uploader('CSVをアップロードしてください', type='json')
 if csv_file_buffer_single is not None:
   df = pd.read_json(csv_file_buffer_single)
-  #st.write(df)
+  st.write("Uploaded data")
+  st.write(df)
 
   # get prediction result 
   response = score_model(df) 
@@ -41,6 +42,7 @@ if csv_file_buffer_single is not None:
   df['prediction']=pre
   
   # convert to label
+  st.write("予測結果")
   df = df.replace({'prediction': {1: "解約"}}).replace({'prediction': {0: "継続"}})
   st.write(df[['customerID','prediction']])
   
