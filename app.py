@@ -7,7 +7,7 @@ import io
 
 #st.title('Title')
 st.header('Databricks ML model serving demo')
-st.image("/app/streamlit-ml-demo/images/serving.png", width=500)
+st.image("/app/streamlit-ml-demo/images/serving.png", width=800)
 
 # Copy and paste this code from the MLflow real-time inference UI. Make sure to save Bearer token from 
 import os
@@ -42,7 +42,5 @@ if csv_file_buffer_single is not None:
   
   # convert to label
   df = df.replace({'prediction': {1: "解約"}}).replace({'prediction': {0: "継続"}})
-  df[['customerID','prediction']]
-
-  st.write(df)
+  st.write(df[['customerID','prediction']])
   
