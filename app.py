@@ -45,4 +45,4 @@ if csv_file_buffer_single is not None:
   #else:
   #  result = "サービス継続"
 
-  st.write(f'顧客の契約予測: {respoinse}')
+  st.write(f'顧客の契約予測: {response}')
