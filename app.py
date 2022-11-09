@@ -30,7 +30,7 @@ def score_model(dataset):
   return response.json()
 
 # data upload interface
-csv_file_buffer_single = st.file_uploader('1レコードのみを含むCSVをアップロードしてください', type='csv')
+csv_file_buffer_single = st.file_uploader('CSVをアップロードしてください', type='csv')
 if csv_file_buffer_single is not None:
   df = pd.read_csv(csv_file_buffer_single)
   #st.write(df)
@@ -45,4 +45,4 @@ if csv_file_buffer_single is not None:
   else:
     result = "サービス継続"
 
-  st.write("顧客の契約予測: result")
+  st.write(f'顧客の契約予測: {result}')
