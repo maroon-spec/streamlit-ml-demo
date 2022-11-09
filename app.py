@@ -38,11 +38,11 @@ if csv_file_buffer_single is not None:
   # get prediction result 
   response = score_model(df) 
   pre = response['predictions']
-  sample_df['prediction']=pre
+  df['prediction']=pre
   
   # convert to label
-  sample_df = sample_df.replace({'prediction': {1: "解約"}}).replace({'prediction': {0: "継続"}})
-  sample_df[['customerID','prediction']]
+  df = df.replace({'prediction': {1: "解約"}}).replace({'prediction': {0: "継続"}})
+  df[['customerID','prediction']]
 
-  st.write(sample_df)
+  st.write(df)
   
