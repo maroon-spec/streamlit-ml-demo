@@ -7,7 +7,7 @@ import io
 
 #st.title('Title')
 st.header('Databricks ML model serving demo')
-st.image("/app/streamlit/images/serving.png", width=500)
+st.image("/app/streamlit-ml-demo/images/serving.png", width=500)
 
 # Copy and paste this code from the MLflow real-time inference UI. Make sure to save Bearer token from 
 import os
