@@ -45,4 +45,4 @@ if csv_file_buffer_single is not None:
   else:
     result = "サービス継続"
 
-  st.metric(label="顧客の契約予測", value=result")
+  st.write("顧客の契約予測:", result)
