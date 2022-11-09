@@ -30,9 +30,9 @@ def score_model(dataset):
   return response.json()
 
 # data upload interface
-csv_file_buffer_single = st.file_uploader('CSVをアップロードしてください', type='csv')
+csv_file_buffer_single = st.file_uploader('CSVをアップロードしてください', type='json')
 if csv_file_buffer_single is not None:
-  df = pd.read_csv(csv_file_buffer_single)
+  df = pd.read_json(csv_file_buffer_single)
   #st.write(df)
 
   response = score_model(df) 
