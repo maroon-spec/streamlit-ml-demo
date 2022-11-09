@@ -35,16 +35,14 @@ if csv_file_buffer_single is not None:
   df = pd.read_json(csv_file_buffer_single)
   #st.write(df)
 
+  # get prediction result 
   response = score_model(df) 
-  #df_res = pd.read_json(response)
-  #st.write(df_res)
-  #df['prediction'] = response
-  #st.write(df[["customerID,prediction"]])
-  #
-  #result = ""
-  #if df['prediction'][0] == 1:
-  #  result = "解約"
-  #else:
-  #  result = "サービス継続"
+  pre = response['predictions']
+  sample_df['prediction']=pre
+  
+  # convert to label
+  sample_df = sample_df.replace({'prediction': {1: "解約"}}).replace({'prediction': {0: "継続"}})
+  sample_df[['customerID','prediction']]
 
-  st.write(f'顧客の契約予測: {response}')
+  st.write(sample_df)
+  
