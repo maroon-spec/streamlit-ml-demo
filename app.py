@@ -39,7 +39,10 @@ if csv_file_buffer_single is not None:
   df['prediction'] = response
   st.write(df)
   
+  result = ""
   if df['prediction'][0] == 1:
     result = "解約"
-    else result = "サービス継続"
+  else 
+    result = "サービス継続"
+
   st.metric(label="顧客の契約予測", value=result")
