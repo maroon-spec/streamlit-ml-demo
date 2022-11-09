@@ -36,8 +36,10 @@ if csv_file_buffer_single is not None:
   #st.write(df)
 
   response = score_model(df) 
-  df['prediction'] = response
-  st.write(df[["customerID,prediction"]])
+  df_res = pd.read_json(response)
+  st.write(df_res)
+  #df['prediction'] = response
+  #st.write(df[["customerID,prediction"]])
   #
   #result = ""
   #if df['prediction'][0] == 1:
