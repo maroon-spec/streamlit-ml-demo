@@ -36,8 +36,8 @@ if csv_file_buffer_single is not None:
   #st.write(df)
 
   response = score_model(df) 
-  #df['prediction'] = response
-  #st.write(df)
+  df['prediction'] = response
+  st.write(df[["customerID,prediction"]])
   #
   #result = ""
   #if df['prediction'][0] == 1:
